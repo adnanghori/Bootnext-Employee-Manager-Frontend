@@ -1,0 +1,36 @@
+<mat-card style="margin-top: 20px;">
+    <mat-list> <div mat-subheader>Request Leave</div></mat-list>
+   
+
+    <mat-card-content>
+       <div class="bootstrap-wrapper">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <form (ngSubmit)="requestLeave()">
+                   
+
+                    <mat-form-field class="w100" appearance="outline">
+                        <mat-label>Description</mat-label>
+                        <textarea type="text" name="leaveDescription"  matInput [(ngModel)]="this.leaveRequest.reason"></textarea>
+                    </mat-form-field>
+                    <div class="row">
+                       
+                        <div class="col-md-6">
+                            <mat-form-field class="w100" appearance="outline">
+                                <mat-label>Number Of Days</mat-label>
+                                <input type="number" required name="numberOfDays" matInput [(ngModel)]="this.leaveRequest.numberOfDays" />
+                            </mat-form-field>
+                        </div>
+                    </div>
+                   
+
+                    <div class="container text-center" style="margin-top: 30px;">
+                        <button mat-raised-button color="accent" type="submit"><mat-icon mat-list-icon>add</mat-icon>Request Leave</button>
+                    </div>
+                </form>
+            </div> 
+        </div>
+       </div>
+    </mat-card-content>
+</mat-card>
+

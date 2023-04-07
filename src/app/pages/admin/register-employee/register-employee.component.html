@@ -1,0 +1,78 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row" style="margin-top: 20px; ">
+          <div class="col-md-10 offset-md-1">
+          <mat-card>
+            <div class="container text-center">
+                 <!-- <img src="../../../assets/register_logo.webp" style="height: 150px; width: 150px; " alt=""> -->
+            </div>
+            
+            <div class="col md-6">
+                    <h1 class="text-center" style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Bootnext Employee Portal Registation</h1>
+
+                    <form (ngSubmit)="submit()">
+                        <!-- username field -->
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Employee Name</mat-label>
+                            <input 
+                            [(ngModel)]="employeeUser.employeeName" 
+                            name="username"
+                            required
+                            matInput />
+                            
+                          </mat-form-field> 
+
+
+                            <!-- email  field -->
+                          
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Email</mat-label>
+                            <input 
+                            [value]="employeeUser.employeeEmail"
+                            name="email" type="email"
+                            required
+                            [readonly]="true"
+                            matInput />
+
+                            
+                          </mat-form-field> 
+
+                        
+                          <mat-form-field class="w100" appearance="outline">
+                            <mat-label>Number Of Leaves</mat-label>
+                            <input type="number" required name="numberOfDays" matInput [(ngModel)]="this.employeeUser.totalLeaves"  />
+                        </mat-form-field>
+                      
+                        <mat-form-field appearance="outline" class="full-width">
+                          <mat-label>Designation</mat-label>
+                          <input 
+                          [value]="employeeUser.designation"
+                          name="designation" type="text"
+                          required
+
+                          matInput />
+
+                          
+                        </mat-form-field> 
+                        <mat-form-field appearance="outline" class="full-width">
+                          <mat-label>Date Of Joining</mat-label>
+                          <input 
+                          [value]="employeeUser.dateOfJoining"
+                          name="dateOfJoining" type="date"
+                          required
+
+                          matInput />
+
+                          
+                        </mat-form-field> 
+                         <div class="container text-center">
+                            <button mat-raised-button color="primary" class="register-button" type="submit">Register </button>
+                            <button mat-stroked-button color="warn" class="register-button" type="reset">Clear</button>
+                         </div>
+                    </form>
+            </div>
+
+          </mat-card>
+        </div>
+    </div>
+</div> 

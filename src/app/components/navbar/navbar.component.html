@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+  <a mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" routerLink="/">
+    <mat-icon>badge</mat-icon>
+  </a>
+  <span>Bootnext Employee Manager</span>
+  <span class="example-spacer"></span>
+
+  <button (click)="logout()" *ngIf="loginService.isLoggedIn()" mat-button class="example-icon-button">Logout</button>
+
+  <button (click)="dashboard()"*ngIf="loginService.isLoggedIn()" mat-button class="example-icon-button" style="margin: 20px;" routerLink="/employee">{{loginService.getUser().username}}</button>
+
+
+</mat-toolbar>
