@@ -1,4 +1,5 @@
 
+
 <mat-card class="body" *ngIf="user" style="margin-top: 20px;">
     <h3>Your Profile Details</h3>
     <!-- {{user|json}} -->
@@ -8,7 +9,11 @@
 
                 <div class="container text-center">
                     
-                    <img class="profile" src="../../../../assets/{{user.imageName}}" alt="">
+                    <img class="profile" *ngIf="user.imageName==null; else image"  src="../../../../assets/default.png" alt="">
+                    <ng-template #image>
+                        <img class="profile" src="../../../../assets/{{user.imageName}}" alt="">
+                    </ng-template>
+
                     <mat-card-actions class="text-center">
                         <button mat-raised-button color="primary" id="update">Upload Image</button>
                 
@@ -37,7 +42,7 @@
                         </tr>
                         <tr>
                             <td>Designation</td>
-                            <td>HR</td>
+                            <td>Manager</td>
                         </tr>
                        
                        </table>

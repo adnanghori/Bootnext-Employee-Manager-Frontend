@@ -1,0 +1,43 @@
+<mat-card class="body" style="margin-top: 20px;">
+    <h3>All Leave Requests</h3>
+    <!-- {{user|json}} -->
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container">
+
+               
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                       <table  class="table" *ngFor="let leaveRequest of leaveRequests">
+                        <tr>
+                            <td>Reason</td>
+                            <td>{{leaveRequest.reason}}</td>
+                        </tr>
+                        <tr>
+                            <td>Number Of Days</td>
+                            <td>{{leaveRequest.numberOfDays}}</td>
+                        </tr>
+                        <tr>
+                            <td >Created Date</td>
+                            <td>{{leaveRequest.createdDate}}</td>
+                        </tr>
+                        <tr>
+                            <td>Status</td>
+                            <td>{{leaveRequest.status}}</td>
+                        </tr>
+
+                        <mat-card-actions class="text-center">
+                            <button mat-raised-button color="primary" id="approve" (click)="approve(leaveRequest.requestID)">Approve</button>
+                            <button mat-raised-button color="warn" id="reject" (click)="reject()">Reject</button>
+                          </mat-card-actions>
+
+                        <br> <br>
+                       </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </mat-card-content>
+   
+</mat-card>

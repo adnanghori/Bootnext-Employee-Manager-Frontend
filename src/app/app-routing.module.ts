@@ -11,6 +11,10 @@ import { AdminGuard } from './services/admin.guard';
 import { AdminProfileComponent } from './pages/admin/admin-profile/admin-profile.component';
 import { AddEmployeeComponent } from './pages/admin/add-employee/add-employee.component';
 import { RegisterEmployeeComponent } from './pages/admin/register-employee/register-employee.component';
+import { ManagerDashboardComponent } from './pages/manager/manager-dashboard/manager-dashboard.component';
+import { ManagerGuard } from './services/manager.guard';
+import { ManagerProfileComponent } from './pages/manager/manager-profile/manager-profile.component';
+import { ViewLeaveRequestsComponent } from './pages/manager/view-leave-requests/view-leave-requests.component';
 
 const routes: Routes = [
   {
@@ -56,6 +60,23 @@ const routes: Routes = [
       }
     ]
     
+  },
+  {
+    path : 'manager',
+    component : ManagerDashboardComponent,
+    canActivate : [ManagerGuard],
+    children : [
+
+      {
+        path : 'profile',
+        component : ManagerProfileComponent
+      },
+      {
+        path : 'view-leave-requests',
+        component : ViewLeaveRequestsComponent
+      }
+
+    ]
   }
 ];
 

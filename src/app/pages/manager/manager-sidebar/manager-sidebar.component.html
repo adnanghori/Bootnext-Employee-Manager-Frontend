@@ -2,18 +2,15 @@
 <mat-card style="margin-top: 20px;">
     <mat-action-list>
         <div mat-subheader>Menu</div>
-        <button mat-list-item routerLink='/admin'>
+        <button mat-list-item routerLink='/manager'>
             <mat-icon mat-list-icon>home</mat-icon> Home
         </button>
-        <button mat-list-item routerLink="'/admin/profile" routerLink="/admin/profile">
+        <button mat-list-item routerLink="/manager/profile">
 
             <mat-icon mat-list-icon>account_circle</mat-icon> Profile
         </button>
-        <button mat-list-item routerLink='/admin/add-employee'>
-            <mat-icon mat-list-icon>holiday_village</mat-icon> Add Employee
-        </button>
-        <button mat-list-item routerLink='/admin/view-employee'>
-            <mat-icon mat-list-icon>visibility</mat-icon> View Employee
+        <button mat-list-item routerLink='/manager/view-leave-requests'>
+            <mat-icon mat-list-icon>request_page</mat-icon> View Leave Requests
         </button>
         <button mat-list-item (click)="logout()">
             <mat-icon mat-list-icon>meeting_room</mat-icon>Logout

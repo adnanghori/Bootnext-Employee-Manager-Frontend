@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
           else if(this.loginservice.getUserRole()=='ROLE_MANAGER')
           {
             //normal
-            this.router.navigate(['/user-dashboard'])
+            this.router.navigate(['/manager'])
           }
           else if (this.loginservice.getUserRole()=='ROLE_EMPLOYEE'){
             this.router.navigate(['/employee'])

@@ -4,15 +4,18 @@ import { AdminService } from 'src/app/services/admin.service';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
-  selector: 'app-admin-profile',
-  templateUrl: './admin-profile.component.html',
-  styleUrls: ['./admin-profile.component.css']
+  selector: 'app-manager-profile',
+  templateUrl: './manager-profile.component.html',
+  styleUrls: ['./manager-profile.component.css']
 })
-export class AdminProfileComponent implements OnInit {
+export class ManagerProfileComponent implements OnInit {
+
+
+
   user:any = null;
   admin:any = null;
   file :any 
-  constructor(private loginService: LoginService,private snack:MatSnackBar,private adminService : AdminService) { }
+  constructor(private loginService: LoginService,private snack:MatSnackBar) { }
 
   ngOnInit(): void {
     this.loginService.getCurrentUser().subscribe(

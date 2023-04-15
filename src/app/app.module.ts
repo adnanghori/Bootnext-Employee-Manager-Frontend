@@ -27,6 +27,10 @@ import { AdminSidebarComponent } from './pages/admin/admin-sidebar/admin-sidebar
 import { AdminProfileComponent } from './pages/admin/admin-profile/admin-profile.component';
 import { AddEmployeeComponent } from './pages/admin/add-employee/add-employee.component';
 import { RegisterEmployeeComponent } from './pages/admin/register-employee/register-employee.component';
+import { ManagerDashboardComponent } from './pages/manager/manager-dashboard/manager-dashboard.component';
+import { ManagerProfileComponent } from './pages/manager/manager-profile/manager-profile.component';
+import { ManagerSidebarComponent } from './pages/manager/manager-sidebar/manager-sidebar.component';
+import { ViewLeaveRequestsComponent } from './pages/manager/view-leave-requests/view-leave-requests.component';
 
 
 @NgModule({
@@ -44,6 +48,10 @@ import { RegisterEmployeeComponent } from './pages/admin/register-employee/regis
     AdminProfileComponent,
     AddEmployeeComponent,
     RegisterEmployeeComponent,
+    ManagerDashboardComponent,
+    ManagerProfileComponent,
+    ManagerSidebarComponent,
+    ViewLeaveRequestsComponent,
 
   ],
   imports: [
