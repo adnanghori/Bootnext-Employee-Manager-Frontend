@@ -16,9 +16,10 @@ export class LeaveRequestsService {
     return this.http.get(`${baseURL}/api/leave-request/all-leave-requests`)
   }
   public approveLeave(requestID:any){
-
-    console.log('service');
     
-    return this.http.put(`${baseURL}/api/leave-request/${requestID}`,{});
+    return this.http.put(`${baseURL}/api/leave-request/approve/${requestID}`,{});
+  }
+  public rejectLeave(requestID:any){
+    return this.http.put(`${baseURL}/api/leave-request/reject/${requestID}`,{});
   }
 }

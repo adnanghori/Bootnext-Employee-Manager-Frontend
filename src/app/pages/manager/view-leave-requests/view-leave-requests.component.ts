@@ -15,6 +15,9 @@ leaveRequests:any = null;
     this.leaveRequestService.getAllLeaveRequests().subscribe(
       (data)=>{
         this.leaveRequests = data;
+        this.leaveRequests.forEach(function (value: { createdDate:  any; }) {
+          value.createdDate = new Date(value.createdDate).toUTCString()
+      })
       },
       (error)=>{
         this.snack.open('Error','OK',{
@@ -25,7 +28,7 @@ leaveRequests:any = null;
   }
   approve(requestID:any){
 
-    console.log(requestID);
+
     
     this.leaveRequestService.approveLeave(requestID).subscribe(
       (data)=>{
@@ -36,7 +39,13 @@ leaveRequests:any = null;
       }
     )
   }
-  reject(){
+  reject(requestID:any){
 
+    this.leaveRequestService.rejectLeave(requestID).subscribe(
+      (data)=>{
+        this.snack.open('Rejected','OK',{duration:3000})
+        this.ngOnInit()
+      }
+    )
   }
 }

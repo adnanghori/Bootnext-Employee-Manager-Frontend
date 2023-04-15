@@ -29,13 +29,13 @@ export class RegisterEmployeeComponent implements OnInit {
       //alert('Field required');
       this.snack.open('fields required','',{
         duration:2000,
-        verticalPosition:'top' 
       })
       return;
     }
 
     // addUser : userService
-
+    console.log(this.employeeUser);
+    
       this.adminService.registerEmployee(this.employeeUser).subscribe(
         (data)=>{
           console.log('success')

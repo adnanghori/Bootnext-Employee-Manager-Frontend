@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { EmployeeService } from 'src/app/services/employee.service';
 import { RaiseLeaveRequestService } from 'src/app/services/raise-leave-request.service';
 
 @Component({
@@ -9,12 +10,24 @@ import { RaiseLeaveRequestService } from 'src/app/services/raise-leave-request.s
 })
 export class RaiseLeaveRequestComponent implements OnInit {
 
-  constructor(private raiseLeaveRequest: RaiseLeaveRequestService,private snack:MatSnackBar) { }
+  constructor(private raiseLeaveRequest: RaiseLeaveRequestService,private snack:MatSnackBar,private employeeService:EmployeeService) { }
   leaveRequest={
     reason:'',
     numberOfDays : '',   
   }
+  employee:any
    ngOnInit(): void {
+    let user = JSON.parse(localStorage.getItem('user')??'')
+
+    
+    this.employeeService.getEmployee(user.email).subscribe(
+        (data)=>{
+          this.employee = data;          
+        }
+      );
+
+      
+     
    }
    requestLeave(){
  
@@ -25,7 +38,7 @@ export class RaiseLeaveRequestComponent implements OnInit {
          })
        },
        (error)=>{
- 
+        this.snack.open('Insufficient balance','OK',{duration:3000})
        }
      )
    }

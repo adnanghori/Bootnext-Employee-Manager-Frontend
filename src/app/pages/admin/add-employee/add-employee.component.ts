@@ -16,7 +16,6 @@ export class AddEmployeeComponent implements OnInit {
     email : '',
     password : '',
     username :''
-
   }
   constructor(private snack:MatSnackBar,private router:Router,private adminService : AdminService) { }
 

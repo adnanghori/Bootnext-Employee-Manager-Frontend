@@ -6,7 +6,7 @@
             <div class="container text-center">
                  <!-- <img src="../../../assets/register_logo.webp" style="height: 150px; width: 150px; " alt=""> -->
             </div>
-            
+            {{employeeUser|json}}
             <div class="col md-6">
                     <h1 class="text-center" style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Bootnext Employee Portal Registation</h1>
 
@@ -46,7 +46,7 @@
                         <mat-form-field appearance="outline" class="full-width">
                           <mat-label>Designation</mat-label>
                           <input 
-                          [value]="employeeUser.designation"
+                          [(ngModel)]="this.employeeUser.designation"
                           name="designation" type="text"
                           required
 
@@ -57,7 +57,7 @@
                         <mat-form-field appearance="outline" class="full-width">
                           <mat-label>Date Of Joining</mat-label>
                           <input 
-                          [value]="employeeUser.dateOfJoining"
+                          [(ngModel)]="this.employeeUser.dateOfJoining"
                           name="dateOfJoining" type="date"
                           required
 
